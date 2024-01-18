@@ -11,16 +11,16 @@
 
 void f_add(stack_t **head, unsigned int count)
 {
-	stack_t *shez;
-	int mas = 0, aux;
+	stack_t *k;
+	int len = 0, aux;
 
-	shez = *head;
-	while (shez)
+	k = *head;
+	while (k)
 	{
-		shez = shez->next;
-		mas++;
+		k = k->next;
+		len++;
 	}
-	if (mas < 2)
+	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", count);
 		fclose(bus.file);
@@ -28,9 +28,9 @@ void f_add(stack_t **head, unsigned int count)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	shez = *head;
-	aux = shez->n + shez->next->n;
-	shez->next->n = aux;
-	*head = shez->next;
-	free(shez);
+	k = *head;
+	aux = k->n + k->next->n;
+	k->next->n = aux;
+	*head = k->next;
+	free(k);
 }

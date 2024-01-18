@@ -10,15 +10,15 @@
 
 void f_pall(stack_t **head, unsigned int count)
 {
-	stack_t *kha;
+	stack_t *k;
 	(void)count;
 
-	kha = *head;
-	if (kha == NULL)
+	k = *head;
+	if (k == NULL)
 		return;
-	while (kha)
+	while (k)
 	{
-		printf("%d\n", kha->n);
-		kha = kha->next;
+		printf("%d\n", k->n);
+		k = k->next;
 	}
 }
