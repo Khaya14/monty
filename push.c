@@ -10,7 +10,7 @@
 
 void f_push(stack_t **head, unsigned int count)
 {
-	int sz, m = 0, flag = 0;
+	int n, m = 0, flag = 0;
 
 	if (bus.arg)
 	{
@@ -32,9 +32,9 @@ void f_push(stack_t **head, unsigned int count)
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE); }
-	sz = atoi(bus.arg);
+	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		addnode(head, sz);
+		addnode(head, n);
 	else
-		addqueue(head, sz);
+		addqueue(head, n);
 }
