@@ -13,7 +13,7 @@
 void f_pstr(stack_t **head, unsigned int count)
 {
 	stack_t *she;
-	(void)counter;
+	(void)count;
 
 	she = *head;
 	while (she)
