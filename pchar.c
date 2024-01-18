@@ -16,7 +16,7 @@ void f_pchar(stack_t **head, unsigned int count)
 	if (!ml)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", count);
-		fclose(bus.ffile);
+		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
@@ -24,7 +24,7 @@ void f_pchar(stack_t **head, unsigned int count)
 	if (ml->n > 127 || ml->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", count);
-		fclose(bus.ffile);
+		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);

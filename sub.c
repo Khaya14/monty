@@ -19,7 +19,7 @@ void f_sub(stack_t **head, unsigned int count)
 	if (mas < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", count);
-		fclose(bus.ffile);
+		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
