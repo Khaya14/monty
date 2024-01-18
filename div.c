@@ -10,13 +10,13 @@
 
 void f_div(stack_t **head, unsigned int count)
 {
-	stack_t *ml;
-	int len = 0, mas;
+	stack_t *k;
+	int len = 0, aux;
 	
-	ml = *head;
-	while (ml)
+	k = *head;
+	while (k)
 	{
-		ml = ml->next;
+		k = k->next;
 		len++;
 	}
 	if (len < 2)
@@ -27,8 +27,8 @@ void f_div(stack_t **head, unsigned int count)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	ml = *head;
-	if (ml->n == 0)
+	k = *head;
+	if (k->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", count);
 		fclose(bus.file);
@@ -36,8 +36,8 @@ void f_div(stack_t **head, unsigned int count)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	mas = ml->next->n / ml->n;
-	ml->next->n = mas;
-	*head = ml->next;
-	free(ml);
+	aux = k->next->n / k->n;
+	k->next->n = aux;
+	*head = k->next;
+	free(k);
 }

@@ -4,7 +4,6 @@
 
 bus_t bus = {NULL, NULL, NULL, 0};
 
-<<<<<<< HEAD
 /**
 * main - monty code interpreter
 * @argc: number of arguments
@@ -13,9 +12,6 @@ bus_t bus = {NULL, NULL, NULL, 0};
 */
 
 int main(int argc, char *argv[])
-=======
-int main(int argc, char *argv[]) 
->>>>>>> 3c1ca79b4a4788953b288a960a92b967d4ce49b0
 {
 	char *content = NULL;
 	FILE *file;
@@ -31,22 +27,12 @@ int main(int argc, char *argv[])
 
 	file = fopen(argv[1], "r");
 	bus.file = file;
-
-<<<<<<< HEAD
-	if (!file)
-=======
 	if (!file) 
->>>>>>> 3c1ca79b4a4788953b288a960a92b967d4ce49b0
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
-<<<<<<< HEAD
 	while ((content = malloc(t_size + 1)) != NULL && fgets(content, t_size + 1, file) != NULL)
-=======
-	while ((content = malloc(t_size + 1)) != NULL && fgets(content, t_size + 1, file) != NULL) 
->>>>>>> 3c1ca79b4a4788953b288a960a92b967d4ce49b0
 	{
 		count++;
 		execute(content, &stack, count, file);
